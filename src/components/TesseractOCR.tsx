@@ -92,7 +92,7 @@ const TesseractOCR: React.FC = () => {
 
     const handlePaste = (e: ClipboardEvent<HTMLDivElement>) => {
         const items = e.clipboardData.items;
-        for (let item of items) {
+        for (const item of items) {
             if (item.type.startsWith('image/')) {
                 const file = item.getAsFile();
                 if (file) {
@@ -163,6 +163,7 @@ const TesseractOCR: React.FC = () => {
                             className='max-w-full h-auto mb-6 rounded-lg shadow-md transition-transform hover:scale-105'
                             style={{ maxHeight: '400px' }}
                         />
+
                         <button
                             onClick={performOCR}
                             disabled={isLoading}
